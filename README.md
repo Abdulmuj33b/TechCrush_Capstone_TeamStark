@@ -11,5 +11,5 @@ Structure:
 - requirements.txt: Python dependencies
 
 Notes:
-- This skeleton was auto-generated. Notebooks contain clear, commented, beginner-friendly code.
+- Notebooks contain clear, commented code.
 - To run notebooks: `pip install -r requirements.txt` then open with JupyterLab or Jupyter Notebook.

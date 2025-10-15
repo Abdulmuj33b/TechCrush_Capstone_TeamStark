@@ -1,0 +1,10 @@
+Slide 1: Title
+Slide 2: Motivation
+Slide 3: Data overview
+Slide 4: EDA highlights
+Slide 5: Modeling approach
+Slide 6: Results
+Slide 7: Interpretation
+Slide 8: Clinical recommendations
+Slide 9: Limitations
+Slide 10: Next steps

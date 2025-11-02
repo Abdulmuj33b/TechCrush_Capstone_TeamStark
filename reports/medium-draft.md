@@ -1,8 +1,8 @@
 📰 Medium Write-Up — Team Stark’s Journey
 
-Title: When Data Meets the Heart — Team Stark’s Journey to Predicting Heart Disease
+Title: When Data Meets the Heart - Team Stark’s Journey to Predicting Heart Disease
 
-In Africa, the conversation around heart health is often drowned by louder challenges — malaria, typhoid, and other infectious diseases. But quietly, cardiovascular diseases have crept up the ranks, becoming one of the top causes of mortality. That silent crisis inspired a group of data science enthusiasts at TechCrush Bootcamp to take action. We called ourselves Team Stark, and we set out to use data to make a difference.
+In Africa, the conversation around heart health is often drowned by louder challenges - malaria, typhoid, and other infectious diseases. But quietly, cardiovascular diseases have crept up the ranks, becoming one of the top causes of mortality. That silent crisis inspired a group of data science enthusiasts at TechCrush Bootcamp to take action. We called ourselves Team Stark, and we set out to use data to make a difference.
 
 💡 The Spark
 
@@ -16,7 +16,7 @@ We cleaned, visualized, and debated over each pattern.  Chest pain type, cholest
 
 ⚙️ Building the Engine
 
-Once the data was ready, we moved into model training. We started simple — Logistic Regression — to get a baseline. Then came Random Forest, a solid performer. But the real star of the show was XGBoost — the gradient boosting powerhouse that captured complex patterns and gave us the best performance.
+Once the data was ready, we moved into model training. We started simple — Logistic Regression — to get a baseline. Then came Random Forest, a solid performer. But the real star of the show was XGBoost - the gradient boosting powerhouse that captured complex patterns and gave us the best performance.
 
 After several rounds of cross-validation and hyperparameter tuning, XGBoost achieved an impressive ROC-AUC of 0.83. That was the moment we knew we had something reliable.
 
@@ -28,7 +28,7 @@ People with higher cholesterol and lower exercise tolerance showed higher risk.
 
 Certain chest pain types had strong correlation with heart disease presence.
 
-Age remained a consistent predictor — reminding us that lifestyle and early intervention matter.
+Age remained a consistent predictor -reminding us that lifestyle and early intervention matter.
 
 We created and saved our plots — ROC curves, confusion matrices, and feature importance charts — which all painted a picture of a model that wasn’t just accurate but interpretable.
 
@@ -58,7 +58,7 @@ We plan to enhance the model further by integrating real-time vitals, wearable d
 
 💬 Final Thoughts
 
-We started as students; we finished as innovators.  Team Stark’s Heart Disease Predictor is more than a project — it’s a vision of how African talent can harness AI to solve African problems.
+We started as students; we finished as innovators.  Team Stark’s Heart Disease Predictor is more than a project - it’s a vision of how African talent can harness AI to solve African problems.
 
-“When data meets determination, impact happens.” — Team Stark, TechCrush Data Science Bootcamp
+“When data meets determination, impact happens.” - Team Stark, TechCrush Data Science Bootcamp
 

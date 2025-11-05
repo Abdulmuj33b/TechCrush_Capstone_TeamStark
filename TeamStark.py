@@ -694,7 +694,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 st.markdown(
     """
     <div class="footer">
-        TeamStark © 2025 | TechCrush Project
+        TeamStark ©2025 | TechCrush Project
     </div>
     """, 
     unsafe_allow_html=True

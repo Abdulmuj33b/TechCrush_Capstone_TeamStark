@@ -7,7 +7,7 @@ import os
 # Define the path to the saved model file (adjust if necessary)
 # In Streamlit deployed apps, you might need to adjust paths or load from cloud storage.
 # For Colab, this path assumes the file is in your mounted Drive.
-model_path = '/content/drive/MyDrive/heart-disease-project/models/final_xgb_optuna.pkl'
+model_path = 'https://github.com/Abdulmuj33b/TechCrush_Capstone_TeamStark/blob/main/models/final_xgb_optuna.pkl'
 
 # Load the model pipeline
 @st.cache_resource # Cache the model to avoid reloading on each rerun

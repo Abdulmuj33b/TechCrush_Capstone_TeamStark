@@ -6,6 +6,18 @@ import os
 import requests
 import tempfile
 
+# Check for required dependencies
+try:
+    import xgboost
+    XGBOOST_AVAILABLE = True
+except ImportError:
+    XGBOOST_AVAILABLE = False
+    st.error("""
+    **Missing Dependency**: xgboost is not installed.
+    
+    Please add `xgboost>=2.0.0` to your requirements.txt file and redeploy.
+    """)
+
 # Page configuration
 st.set_page_config(
     page_title="HeartGuard - Disease Prediction",
@@ -14,7 +26,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS for styling
+# Enhanced CSS for styling with cool background
 st.markdown("""
 <style>
     .main-header {
@@ -22,27 +34,32 @@ st.markdown("""
         color: #ff4b4b;
         text-align: center;
         margin-bottom: 2rem;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
     .prediction-box {
         padding: 2rem;
-        border-radius: 10px;
+        border-radius: 15px;
         margin: 1rem 0;
         border-left: 5px solid;
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
     }
     .high-risk {
-        background-color: #ffebee;
+        background: linear-gradient(135deg, rgba(255, 235, 238, 0.95) 0%, rgba(255, 245, 245, 0.95) 100%);
         border-left-color: #ff4b4b;
     }
     .low-risk {
-        background-color: #e8f5e8;
+        background: linear-gradient(135deg, rgba(232, 245, 232, 0.95) 0%, rgba(245, 255, 245, 0.95) 100%);
         border-left-color: #4caf50;
     }
     .feature-card {
-        background-color: #f8f9fa;
+        background: rgba(248, 249, 250, 0.95);
         padding: 1rem;
         border-radius: 10px;
         margin: 0.5rem 0;
         border-left: 4px solid #2196f3;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     }
     .vital-card {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -52,11 +69,45 @@ st.markdown("""
         margin: 0.5rem 0;
     }
     .validation-warning {
-        background-color: #fff3cd;
+        background-color: rgba(255, 243, 205, 0.9);
         border: 1px solid #ffeaa7;
         border-radius: 5px;
         padding: 0.5rem;
         margin: 0.2rem 0;
+    }
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.9rem;
+        z-index: 1000;
+    }
+    .main-container {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 20px;
+    }
+    .content-container {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 60px;
+    }
+    .stApp {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+    }
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
     }
 </style>
 """, unsafe_allow_html=True)
@@ -223,8 +274,12 @@ def show_input_guidelines():
 # Load model with multiple fallback options
 @st.cache_resource
 def load_model():
+    if not XGBOOST_AVAILABLE:
+        st.error("Cannot load model: xgboost is not installed")
+        return None
+        
     try:
-        # Try local paths first
+        # Try local paths first (removed success message)
         local_paths = [
             'models/final_xgb_optuna.pkl',
             './final_xgb_optuna.pkl',
@@ -233,7 +288,7 @@ def load_model():
         
         for path in local_paths:
             if os.path.exists(path):
-                st.success(f"Model loaded from local: {path}")
+                # Removed the success message that was here
                 return joblib.load(path)
         
         # If local not found, download from GitHub
@@ -258,21 +313,17 @@ def load_model():
         # Clean up
         os.unlink(temp_path)
         
-        st.success("Model downloaded and loaded successfully from GitHub!")
         return model
         
     except Exception as e:
         st.error(f"Error loading model: {e}")
-        st.info("""
-        Troubleshooting tips:
-        1. Make sure the model file exists in your GitHub repository
-        2. Ensure the file is committed and pushed to GitHub
-        3. Check that the file path in the repository is correct
-        """)
         return None
 
 # Initialize model
 model = load_model()
+
+# Main app content with enhanced background
+st.markdown('<div class="content-container">', unsafe_allow_html=True)
 
 # App header
 st.markdown('<h1 class="main-header">HeartGuard Pro</h1>', unsafe_allow_html=True)
@@ -623,7 +674,7 @@ with col2:
     
     st.header("Emergency Info")
     st.markdown("""
-    <div style="background-color: #ffebee; padding: 1rem; border-radius: 10px; border-left: 4px solid #ff4b4b;">
+    <div style="background-color: rgba(255, 235, 238, 0.9); padding: 1rem; border-radius: 10px; border-left: 4px solid #ff4b4b;">
     <strong>Seek Immediate Medical Attention for:</strong>
     <ul>
     <li>Chest pain or pressure</li>
@@ -636,11 +687,15 @@ with col2:
     </div>
     """, unsafe_allow_html=True)
 
+# Close content container
+st.markdown('</div>', unsafe_allow_html=True)
+
 # Footer
-st.markdown("---")
 st.markdown(
-    "<div style='text-align: center; color: gray;'>"
-    "HeartGuard Pro v2.0 | Medical AI Tool | For educational and screening purposes only"
-    "</div>", 
+    """
+    <div class="footer">
+        TeamStark © 2025 | TechCrush Project
+    </div>
+    """, 
     unsafe_allow_html=True
 )

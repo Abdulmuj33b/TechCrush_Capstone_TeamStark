@@ -148,8 +148,9 @@ jupyter notebook Team_Stark_Heart_Disease_Predictor.ipynb
 
 (Optional) Launch the Streamlit app:
 
-streamlit run app.py
-
+streamlit run TeamStark.py
+  **https://teamstark-heart-disease-predictor2.streamlit.app***
+  
 🔮 Future Improvements
 
 Integration with electronic health records (EHR)

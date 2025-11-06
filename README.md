@@ -54,31 +54,29 @@ Chest pain type and cholesterol levels showed significant association with heart
 
 A mild class imbalance was handled using SMOTE (Synthetic Minority Oversampling Technique).
 
-<img width="124" height="109" alt="correllation heatmap" src="https://github.com/user-attachments/assets/c3680353-d3d5-468c-b81e-9e7ee5f11a0c" />
+<img width="600" height="550" alt="correllation heatmap" src="https://github.com/user-attachments/assets/c3680353-d3d5-468c-b81e-9e7ee5f11a0c" />
 
 **Model Development**
 
 Three core models were trained and evaluated:
 
-Logistic Regression — Simple and interpretable baseline.
+  Logistic Regression — Simple and interpretable baseline.
 
-Random Forest — Ensemble method capturing nonlinear relationships.
+  Random Forest — Ensemble method capturing nonlinear relationships.
 
-XGBoost — Gradient boosting algorithm providing the best performance.
+  XGBoost — Gradient boosting algorithm providing the best performance.
 
 The modeling pipeline included:
 
-Data preprocessing with ColumnTransformer
+  Data preprocessing with ColumnTransformer
 
-Stratified K-Fold cross-validation
+  Stratified K-Fold cross-validation
 
-Hyperparameter tuning with grid search
+  Hyperparameter tuning with grid search
 
-Model saving via joblib
+**Model saving via joblib**
 
-📈 Placeholder: Insert Model Comparison Bar Chart
-
-📊 Model Evaluation
+**Model Evaluation**
 
 Model
 
@@ -113,7 +111,8 @@ XGBoost (Best)
 0.82
 
 Best Model: ✅ XGBoost (ROC-AUC ≈ 0.83)
-🧩 Placeholder: Confusion Matrix, ROC Curve, Precision-Recall Curve
+<img width="685" height="598" alt="image" src="https://github.com/user-attachments/assets/03bd1501-ac18-4c9d-9bb5-bf7471ed1907" />
+
 
 💾 Model Saving & Deployment
 
@@ -121,9 +120,10 @@ The trained XGBoost model was saved in /models/XGBoost.joblib.
 
 Ready for integration into a Streamlit web app for real-time predictions.
 
-📦 Placeholder: Insert sample Streamlit interface screenshot
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/bf231ff2-ae2e-4059-999e-6a0b98297e2a" />
 
-🧰 Tools & Libraries Used
+
+**Tools & Libraries Used**
 
 Languages: Python 3.x
 

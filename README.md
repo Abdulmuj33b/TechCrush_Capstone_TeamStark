@@ -54,9 +54,9 @@ Chest pain type and cholesterol levels showed significant association with heart
 
 A mild class imbalance was handled using SMOTE (Synthetic Minority Oversampling Technique).
 
-<img width="1247" height="1099" alt="image" src="https://github.com/user-attachments/assets/c3680353-d3d5-468c-b81e-9e7ee5f11a0c" />
+<img width="124" height="109" alt="correllation heatmap" src="https://github.com/user-attachments/assets/c3680353-d3d5-468c-b81e-9e7ee5f11a0c" />
 
-⚙️ Model Development
+**Model Development**
 
 Three core models were trained and evaluated:
 

@@ -22,7 +22,7 @@ Team_Stark_Heart_Disease_Predictor/
 ├── images/                                     # Visualizations and plots
 └── README.md                                   # Project documentation
 
-🧠 Data Description
+**Data Description**
 
 The dataset (heart.xls) contains patient health records with features like:
 
@@ -36,7 +36,7 @@ Target (0 = No Heart Disease, 1 = Heart Disease)
 
 After cleaning and preprocessing, the data was stored as cleaned.heart.csv for reproducibility.
 
-🔍 Exploratory Data Analysis (EDA)
+**Exploratory Data Analysis (EDA)**
 
 Our EDA covered:
 
@@ -48,13 +48,13 @@ Distribution plots for age, cholesterol, and max heart rate
 
 Class imbalance checks
 
-Key Insights:
+**Key Insights:**
 
 Chest pain type and cholesterol levels showed significant association with heart disease.
 
 A mild class imbalance was handled using SMOTE (Synthetic Minority Oversampling Technique).
 
-📊 Placeholder: Insert EDA plots (histograms, correlation heatmap, etc.)
+<img width="1247" height="1099" alt="image" src="https://github.com/user-attachments/assets/c3680353-d3d5-468c-b81e-9e7ee5f11a0c" />
 
 ⚙️ Model Development
 

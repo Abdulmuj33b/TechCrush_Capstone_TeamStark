@@ -233,6 +233,6 @@ Reviewer
 
 💬 Acknowledgements
 
-Special thanks to TechCrush Data Science Bootcamp for guidance, mentorship, and providing the platform to learn, collaborate, and innovate for Africa’s health future most especially Miss Gift Upwek.
+Special thanks to TechCrush Data Science Bootcamp for guidance, mentorship, and providing the platform to learn, collaborate, and innovate for Africa’s health future most especially Miss Gift Ukpoweh.
 
 “When data meets determination, impact happens.” — Team Stark
